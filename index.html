@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/latihan.js" defer></script>
-  <script src="js/logika.js" defer></script>
   <script src="js/main.js" defer></script>
+     <script src="js/logika.js" defer></script>
+     <script src="js/latihan.js" defer></script>
 </head>
 <body>
   <header>
@@ -24,6 +24,7 @@
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </nav>
+      <button type="button" id="tombol-tema" class="tombol-tema">Mode Gelap</button>
       <!-- Tantangan: menu ponsel yang bisa dibuka-tutup -->
       <details class="menu-ponsel">
         <summary>Menu</summary>
@@ -79,11 +80,8 @@ Saya senang mencoba hal baru, membuat proyek sederhana, dan terus meningkatkan k
 
         <section class="kartu">
           <h2>Keahlian</h2>
-          <ul>
-            <li> HTML, CSS, dan JavaScript dasar (sedang dipelajari)</li>
-            <li>Git, GitHub, Canva, dan dasar penggunaan komputer</li>
-            <li>Mengetik cepat, belajar mandiri, dan memecahkan masalah</li>
-          </ul>
+          <ul id="daftar-skill"></ul>
+          <p id="jumlah-skill"></p>
         </section>
       </div>
 
@@ -112,9 +110,7 @@ Saya senang mencoba hal baru, membuat proyek sederhana, dan terus meningkatkan k
             <tr>
               <td>Jumat</td>
               <td>19.30 - 20.30</td>
-              <td>Evaluasi dan mengembangkan proyek
-
-</td>
+              <td>Evaluasi dan mengembangkan proyek</td>
             </tr>
           </tbody>
         </table>
@@ -130,6 +126,3 @@ Saya senang mencoba hal baru, membuat proyek sederhana, dan terus meningkatkan k
   </footer>
 </body>
 </html>
-
-
- 
