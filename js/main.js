@@ -28,7 +28,31 @@ async function muatKeahlian() {
 if (daftarSkill) {
   muatKeahlian();
 }
+const daftarSkillBaru = document.querySelector("#daftar-skill-baru");
+const jumlahSkillBaru = document.querySelector("#jumlah-skill-baru");
+async function muatKeahlianBaru() {
+  try {
+    const response = await fetch("data/keahlianbaru.json");
+    if (!response.ok) {
+      throw new Error(`Status ${response.status}`);
+    }
+    const skills = await response.json();
 
+    skills.forEach((skill) => {
+      const item = document.createElement("li");
+      item.textContent = `${skill.nama} (${skill.level})`;
+      daftarSkillBaru.appendChild(item);
+    });
+    jumlahSkillBaru.textContent = `Ada ${skills.length} keahlian baru yang sedang saya kembangkan.`;
+  } catch (error) {
+    jumlahSkillBaru.textContent = "Daftar keahlian baru gagal dimuat.";
+    console.error(error);
+  }
+}
+
+if (daftarSkillBaru) {
+  muatKeahlianBaru();
+}
 // 2. Tema gelap (semua halaman)
 const tombolTema = document.querySelector("#tombol-tema");
 
@@ -41,6 +65,7 @@ tombolTema.addEventListener("click", () => {
     tombolTema.textContent = "Mode Gelap";
   }
 });
+
 
 // 3. Penghitung karakter pesan (halaman Kontak)
 const kotakPesan = document.querySelector("#pesan");
