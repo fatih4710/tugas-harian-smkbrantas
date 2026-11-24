@@ -30,7 +30,7 @@
         <summary>Menu</summary>
         <nav>
           <ul>
-            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html"class="active">Beranda</a></li>
             <li><a href="proyek.html">Proyek</a></li>
             <li><a href="kalkulator.html">Kalkulator</a></li>
             <li><a href="kontak.html">Kontak</a></li>
@@ -62,7 +62,7 @@ Saya senang mencoba hal baru, membuat proyek sederhana, dan terus meningkatkan k
         <section class="kartu">
           <h2>Hobi</h2>
           <ul>
-            <li>Belajar teknologi dan pemograman</li>
+            <li>Belajar teknologi dan pemrograman</li>
             <li>Bermain game </li>
             <li>Mendengarkan musik</li>
           </ul>
@@ -82,10 +82,26 @@ Saya senang mencoba hal baru, membuat proyek sederhana, dan terus meningkatkan k
           <h2>Keahlian</h2>
           <ul id="daftar-skill"></ul>
           <p id="jumlah-skill"></p>
-          <h2>Keahlian Baru</h2>
-          <ul id="daftar-skill-baru"></ul>
-          <p id="jumlah-skill-baru"></p>
-          
+<ul id="daftar-keahlian">
+  <!-- isi daftar dari keahlian.json, jangan diubah -->
+</ul>
+<p>Ada <span id="jumlah-keahlian">7</span> keahlian yang sedang saya kembangkan.</p>
+
+<form id="form-keahlian" class="form-keahlian">
+  <label for="input-keahlian">Keahlian Baru</label>
+  <input type="text" id="input-keahlian" placeholder="contoh">
+
+  <label for="level-keahlian">Level</label>
+  <select id="level-keahlian">
+    <option value="Pemula">Pemula</option>
+    <option value="Dasar">Dasar</option>
+    <option value="Menengah">Menengah</option>
+    <option value="Mahir">Mahir</option>
+  </select>
+
+  <p id="pesan-keahlian" class="pesan-keahlian" role="alert"></p>
+  <button type="submit">Tambah Keahlian</button>
+</form>
         </section>
       </div>
 

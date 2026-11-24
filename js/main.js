@@ -175,4 +175,40 @@ async function ambilRepo() {
 
 if (daftarRepo) {
   ambilRepo();
+}// 7. Form tambah keahlian
+const formKeahlian = document.getElementById('form-keahlian');
+
+// Dibungkus if supaya tidak error di halaman yang tidak punya form ini
+if (formKeahlian) {
+  const inputKeahlian = document.getElementById('input-keahlian');
+  const levelKeahlian = document.getElementById('level-keahlian');
+  const pesanKeahlian = document.getElementById('pesan-keahlian');
+  const daftarKeahlian = document.getElementById('daftar-keahlian');
+  const jumlahKeahlian = document.getElementById('jumlah-keahlian');
+
+  formKeahlian.addEventListener('submit', function (e) {
+    e.preventDefault(); // cegah halaman memuat ulang
+
+    const nama = inputKeahlian.value.trim();
+
+    // Nama kosong: tampilkan pesan, hentikan
+    if (nama === '') {
+      pesanKeahlian.textContent = 'Nama keahlian tidak boleh kosong.';
+      inputKeahlian.focus();
+      return;
+    }
+
+    pesanKeahlian.textContent = '';
+
+    // Buat butir daftar baru, misalnya "Figma (Dasar)"
+    const li = document.createElement('li');
+    li.textContent = nama + ' (' + levelKeahlian.value + ')';
+    daftarKeahlian.appendChild(li);
+
+    // Perbarui angka "Ada N keahlian"
+    jumlahKeahlian.textContent = daftarKeahlian.children.length;
+
+    formKeahlian.reset();
+    inputKeahlian.focus();
+  });
 }
